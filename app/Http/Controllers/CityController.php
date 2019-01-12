@@ -91,6 +91,7 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\City::destroy($id);
+        return redirect()->action('CityController@index');
     }
 }

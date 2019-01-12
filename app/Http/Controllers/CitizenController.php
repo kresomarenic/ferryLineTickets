@@ -95,6 +95,7 @@ class CitizenController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Citizen::destroy($id);
+        return redirect()->action('CitizenController@index');
     }
 }

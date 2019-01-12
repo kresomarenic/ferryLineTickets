@@ -15,9 +15,9 @@ class CreatePrepaidTicketsTable extends Migration
         Schema::create('prepaid_tickets', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('citizen_id');
-            $table->foreign('citizen_id')->references('id')->on('citizens');
+            $table->foreign('citizen_id')->references('id')->on('citizens')->onDelete('cascade');
             $table->unsignedInteger('ferry_line_id');
-            $table->foreign('ferry_line_id')->references('id')->on('ferry_lines');
+            $table->foreign('ferry_line_id')->references('id')->on('ferry_lines')->onDelete('cascade');
             $table->dateTime('valid_from');
             $table->dateTime('valid_to');
             $table->timestamps();

@@ -92,6 +92,7 @@ class FerryPortController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\FerryPort::destroy($id);
+        return redirect()->action('FerryPortController@index');
     }
 }

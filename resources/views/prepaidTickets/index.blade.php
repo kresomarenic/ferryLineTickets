@@ -12,6 +12,7 @@
       <th scope="col">Ferry line</th>
       <th scope="col">Valid from</th>
       <th scope="col">Valid to</th>
+      <th scope="col">Obriši</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +27,7 @@
       <td><?= $departure." - ".$destination ?></td>
       <td><?= $prepaidTicket->valid_from ?></td>
       <td><?= $prepaidTicket->valid_to ?></td>
+      <td><a href="/prepaidTickets/delete/{{ $prepaidTicket->id }}" class="btn btn-sm btn-outline-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

@@ -13,6 +13,7 @@
       <th scope="col">OIB</th>
       <th scope="col">City</th>
       <th scope="col">Category</th>
+      <th scope="col">Obriši</th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +25,7 @@
       <td><?= $citizen->citizen_oib ?></td>
       <td><?= $citizen->city->city_name ?></td>
       <td><?= $citizen->category->label ?></td>
+      <td><a href="/citizens/delete/{{ $citizen->id }}" class="btn btn-sm btn-outline-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

@@ -16,7 +16,7 @@ class CreateFerryPortsTable extends Migration
             $table->increments('id');
             $table->string('ferry_port_name');
             $table->unsignedInteger('city_id');
-            $table->foreign('city_id')->references('id')->on('cities');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->timestamps();
         });
     }

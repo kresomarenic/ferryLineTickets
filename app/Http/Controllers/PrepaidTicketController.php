@@ -94,6 +94,7 @@ class PrepaidTicketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\PrepaidTicket::destroy($id);
+        return redirect()->action('PrepaidTicketController@index');
     }
 }

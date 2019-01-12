@@ -93,6 +93,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Category::destroy($id);
+        return redirect()->action('CategoryController@index');
     }
 }

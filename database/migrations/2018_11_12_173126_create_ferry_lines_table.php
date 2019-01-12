@@ -15,9 +15,9 @@ class CreateFerryLinesTable extends Migration
         Schema::create('ferry_lines', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('departure_port_id');
-            $table->foreign('departure_port_id')->references('id')->on('ferry_ports');
+            $table->foreign('departure_port_id')->references('id')->on('ferry_ports')->onDelete('cascade');
             $table->unsignedInteger('destination_port_id');
-            $table->foreign('destination_port_id')->references('id')->on('ferry_ports');
+            $table->foreign('destination_port_id')->references('id')->on('ferry_ports')->onDelete('cascade');
             $table->timestamps();
         });
     }
